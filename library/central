@@ -12,6 +12,26 @@ function field:Window(...)
 		window["1"]["Name"] = [[GUI]];
 		window["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
+		-- StarterGui.GUI.Notification
+		window["96"] = Instance.new("Frame", window["1"]);
+		window["96"]["BorderSizePixel"] = 0;
+		window["96"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+		window["96"]["Size"] = UDim2.new(0, 249, 0, 987);
+		window["96"]["Position"] = UDim2.new(0.85456, 0, 0.00798, 0);
+		window["96"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+		window["96"]["Name"] = [[Notification]];
+		window["96"]["BackgroundTransparency"] = 1;
+
+
+		-- StarterGui.GUI.Notification.UIListLayout
+		window["97"] = Instance.new("UIListLayout", window["96"]);
+		window["97"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Right;
+		window["97"]["Padding"] = UDim.new(0, 5);
+		window["97"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
+		window["97"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+
 
 
 
@@ -2004,6 +2024,5 @@ function field:Window(...)
 
 	return window
 end
-
 
 return field
