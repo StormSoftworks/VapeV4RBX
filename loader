@@ -1,1 +1,36 @@
+local BaseGit: string = "https://raw.githubusercontent.com/StormSoftworks/VapeV4RBX/main"
+local GamesUrl: string = BaseGit .. "/games/"
+local placeId: number = game.PlaceId
 
+local function tryLoadScript(url: string): boolean
+	local success, content = pcall(function()
+		return game:HttpGet(url)
+	end)
+
+	if success and content and not content:find("404: Not Found") then
+		local execute, err = loadstring(content)
+		if execute then
+			task.spawn(execute)
+			return true
+		else
+			warn(tostring(err))
+		end
+	end
+	return false
+end
+
+local function init()
+	local specificGameUrl = GamesUrl .. tostring(placeId) .. ".lua"
+	if tryLoadScript(specificGameUrl) then
+		return
+	end
+
+	local universalUrl = GamesUrl .. "universal.lua"
+	if tryLoadScript(universalUrl) then
+		return
+	end
+
+	warn("Product couldn't load.")
+end
+
+init()
