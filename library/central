@@ -11,6 +11,8 @@ function field:Window(...)
 		window["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 		window["1"]["Name"] = [[GUI]];
 		window["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+		window["1"]["ResetOnSpawn"] = false;
+		window["1"]["IgnoreGuiInset"] = true
 
 		-- StarterGui.GUI.Notification
 		window["96"] = Instance.new("Frame", window["1"]);
