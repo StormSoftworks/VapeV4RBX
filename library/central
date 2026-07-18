@@ -25,7 +25,7 @@ function field:Window(...)
 
 		-- StarterGui.GUI.Radar
 		window["a8"] = Instance.new("Frame", window["1"]);
-		window["a8"]["Visible"] = true; -- Changed to true so you can see it
+		window["a8"]["Visible"] = false; -- Changed to true so you can see it
 		window["a8"]["BorderSizePixel"] = 0;
 		window["a8"]["BackgroundColor3"] = Color3.fromRGB(21, 21, 21);
 		window["a8"]["Size"] = UDim2.new(0, RADAR_SIZE, 0, RADAR_SIZE);
@@ -2004,5 +2004,6 @@ function field:Window(...)
 
 	return window
 end
+
 
 return field
