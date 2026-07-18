@@ -18,7 +18,7 @@ function field:Window(...)
 		window["96"] = Instance.new("Frame", window["1"]);
 		window["96"]["BorderSizePixel"] = 0;
 		window["96"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-		window["96"]["Size"] = UDim2.new(0, 249, 0, 987);
+		window["96"]["Size"] = UDim2.new(0.141, 0,0.985, 0);
 		window["96"]["Position"] = UDim2.new(0.85456, 0, 0.00798, 0);
 		window["96"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 		window["96"]["Name"] = [[Notification]];
@@ -2014,10 +2014,12 @@ function field:Window(...)
 			notify["9f"]["Color"] = Color3.fromRGB(45, 45, 45);
 			
 			TS:Create(notify["98"], TweenInfo.new(.2), {GroupTransparency = 0}):Play()
+			TS:Create(notify["9f"], TweenInfo.new(.2), {Transparency = 0}):Play()
 			task.wait(.2)
+			TS:Create(notify["9e"], TweenInfo.new(duration, Enum.EasingStyle.Linear), {Size = UDim2.new(0, 0, 0, 3)}):Play()
 			task.wait(duration)
 			TS:Create(notify["98"], TweenInfo.new(.2), {GroupTransparency = 1}):Play()
-			task.wait(.2)
+			TS:Create(notify["9f"], TweenInfo.new(.2), {Transparency = 1}):Play()
 			notify["98"]:Destroy()
 		end
 		
